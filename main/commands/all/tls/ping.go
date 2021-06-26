@@ -63,7 +63,7 @@ func executePing(cmd *base.Command, args []string) {
 			base.Fatalf("Failed to dial tcp: %s", err)
 		}
 		tlsConn := tls.Client(tcpConn, &tls.Config{
-			InsecureSkipVerify: true,
+			InsecureSkipVerify: false,
 			NextProtos:         []string{"http/1.1"},
 			MaxVersion:         tls.VersionTLS12,
 			MinVersion:         tls.VersionTLS12,
